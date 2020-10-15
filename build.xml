@@ -176,6 +176,13 @@
         <type type="file"/>
       </fileset>
     </copy>
+
+    <jar destfile="Vrep-map-generator.jar">
+      <fileset dir="${vrep-map-generator.output.dir}"/>
+      <manifest>
+        <attribute name="Main-Class" value="MapGenerator.MainStructure.Main"/>
+      </manifest>
+    </jar>
   </target>
   
   <target name="compile.module.vrep-map-generator.tests" depends="compile.module.vrep-map-generator.production" description="compile module Vrep-map-generator; test classes" unless="skip.tests"/>
